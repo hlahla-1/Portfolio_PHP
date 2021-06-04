@@ -10,6 +10,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 </head>
 
 <body>
@@ -24,7 +27,7 @@
                 <li><a href="#about" class="menu-btn">Over</a></li>
                 <li><a href="#projecten" class="menu-btn">Projecten</a></li>
                 <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#" class="menu-btn">Ervaring</a></li>
+                <li><a href="#teams" class="menu-btn">Opleidingen</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -79,8 +82,8 @@
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
                         <div class="text">PHP EN SQL</div>
-                        <p>Voor PHP heb ik registeren pagina, login pagina en het dashboard. En testen ook.
-                            Ik kan de gegevens in databases en tabellen maken, wijzigen, verwijderen, zoeken en kijken. ik weet hoe ik de primaire sleutels en externe sleutels moet instellen en hoe ik verbinding moet maken tussen de tabellen. 
+                        <p>Voor PHP heb ik registeren pagina, login pagina en het dashboard met SQL database gemaakt. En testen ook.
+                            
                         </p>
                     </div>
                 </div>
@@ -110,13 +113,13 @@
             <h2 class="title">Mijn skills</h2>
             <div class="skills-content">
                 <div class="column left">
-                    <div class="text">Mijn creative skills & experiences.</div>
+                    <div class="text">Mijn creatieve vaardigheden en ervaringen</div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima doloremque, molestias numquam
                         sequi laudantium modi quam aspernatur hic minus. Voluptatum officiis repellendus, voluptatem
                         molestias cumque nulla vel similique exercitationem velit omnis. Ea temporibus ipsam
                         necessitatibus dolorum, qui maiores at, deserunt, sequi debitis id molestiae quos accusamus
                         voluptatibus doloremque ad corporis. </p>
-                        <a href="#">Read more</a>
+                        <a href="#">Lees verder</a>
                 </div>
                 <div class="column right">
                     <div class="bars">
@@ -133,13 +136,13 @@
                         </div>
                         <div class="line css"></div>
                     </div>
-                    <div class="bars">
+                    <!-- <div class="bars">
                         <div class="info">
                             <span>Javascript</span>
                             <span>10%</span>
                         </div>
                         <div class="line js"></div>
-                    </div>
+                    </div> -->
                     <div class="bars">
                         <div class="info">
                             <span>C#</span>
@@ -173,13 +176,62 @@
         </div>
     </section>
 
+    <!-- teams section start  -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Mijn opleidingen</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/NovaColledge.png" alt="">
+                        <div class="text">Software Developer</div>
+                        <p>Nova College Haarlem</p>
+                        <p>2020 Aug - heden</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Azure.png" alt="">
+                        <div class="text"> Azure Administrator</div>
+                        <p>Microsoft</p>
+                        <p>2019 Juli - 2019 Okt</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Ms.net.jpg" alt="">
+                        <div class="text">MS.Net Programming</div>
+                        <p>IMCEITS, in Myanmar</p>
+                        <p>2011 - 2012</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/computer science2.jpg" alt="">
+                        <div class="text">Computer Science:Basis</div>
+                        <p>Universiteit van Computer Studies UCSY, Yangon, Myanmar</p>
+                        <p>2006 - 2009</p>
+                    </div>
+                </div> 
+                <div class="card">
+                    <div class="box">
+                        <img src="images/computer science1.jpg" alt="">
+                        <div class="text">Computer Science:Gevorderd</div>
+                        <p>Universiteit van Computer Studies UCSY, Yangon, Myanmar</p>
+                        <p>2009 - 2010</p>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </section>
+
     <!-- contact section start  -->
     <section class="contact" id="contact">
         <div class="max-width">
-            <h2 class="title">Contact me</h2>
+            <h2 class="title">Contact mij</h2>
             <div class="contact-content">
                 <div class="column left">
-                    <div class="text">Get in Touch</div>
+                    <div class="text">Neem contact op</div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima doloremque, molestias numquam
                         sequi laudantium modi quam aspernatur hic minus. Voluptatum officiis repellendus, voluptatem
                         molestias cumque nulla vel?</p>
@@ -212,20 +264,20 @@
                     <form action="#">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" placeholder="Naam" required>
                             </div>
                             <div class="field email">
                                 <input type="email" placeholder="Email" required>
                             </div>                            
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                            <input type="text" placeholder="Onderwerp" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Describe project.." required></textarea>
+                            <textarea cols="30" rows="10" placeholder="Beschrijf project.." required></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit">Send message</button>
+                            <button type="submit">Bericht versturen</button>
                         </div>
                     </form>
                 </div>
@@ -235,7 +287,7 @@
 
     <!-- footer section start  -->
     <footer>
-        <span>Created By <a href="#">CodingHlaHla</a> | <span class="far fa-copyright"></span> 2021 All rights reserved.</span>
+        <span>Gemaakt door <a href="#">CodingHlaHla</a> | <span class="far fa-copyright"></span> 2021 Alle rechten voorbehouden.</span>
     </footer>
 
     <script src="script.js"></script>

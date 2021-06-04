@@ -142,7 +142,7 @@ section{
     padding: 100px 0;
 }
 
-.about, .services, .skills, .contact, footer{
+.about, .services, .skills, .teams, .contact, footer{
     font-family: 'Poppins',sans-serif;
 }
 
@@ -231,14 +231,16 @@ section .title::after{
 
 /* projecten section styling */
 
-.services{
+.services, .teams{
     color: #fff;
     background: #111;
 }
-.services .title::before{
+.services .title::before,
+.teams .title::before{
     background: #fff;
 }
-.services .title::after{
+.services .title::after,
+.teams .title::after{
     background: #111;
     content: "wat ik maak" ; /*what i provide*/
 }
@@ -354,6 +356,69 @@ section .title::after{
 .skills .skills-content .right .mysql::before{
     width: 40%;
 }
+
+/* teams section styling */
+.teams .title::after{
+    content: "wat ik leer ";
+}
+.teams .carousel .card{
+    background: #222;
+    border-radius: 6%;
+    padding: 25px 35px;    
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: rgb(150, 10, 40);
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.teams .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgb(150, 10, 40);
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img{
+    border-color: white;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid rgb(150, 10, 40)!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: rgb(150, 10, 40)!important;
+}
+
 
 /* contact section styling  */
 .contact .title::after{
