@@ -390,6 +390,14 @@
                 <?php
 
                         $naam="";
+                        $email = "";
+                        $bedrijfsnaam="";
+                        $plaats = "";
+                        $adres = "";
+                        $postcode = "";
+                        $telefoonnummer = 0;
+                        $onderwerp = "";
+                        $beschrijfproject = "";
                         
                 ?>
             </div>
