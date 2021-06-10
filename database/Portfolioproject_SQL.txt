@@ -1,0 +1,82 @@
+DROP DATABASE IF EXISTS portfolioproject;
+CREATE DATABASE portfolioproject;
+USE portfolioproject;
+
+CREATE TABLE `Projecten` (
+  `ID` int(11) NOT NULL,
+  `projecticon` varchar(30) NOT NULL,
+  `projectnaam` varchar(30) NOT NULL,
+  `beschrijving` varchar(120) NOT NULL
+);
+
+ALTER TABLE `Projecten`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `Projecten`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+INSERT INTO `Projecten` (`projecticon`,`projectnaam`,`beschrijving`) VALUES
+('fas fa-paint-brush','PHP EN SQL','Voor PHP heb ik registeren pagina, login pagina en het dashboard met SQL database gemaakt. En testen ook.'),
+('fas fa-chart-line','C#','Voor C# heb ik ganzenboard, Hangman, vier op een rij, tic tac toe, memory, ect gemaakt.'),
+('fas fa-code','HTML/CSS','Ik heb de projecten met html / CSS gedaan zoals portfolio en Haarlem-promotie.');
+
+CREATE TABLE `Skills` (
+  `ID` int(11) NOT NULL,
+  `skillnaam` varchar(30) NOT NULL,
+  `percentages` int(11) NOT NULL
+);
+
+ALTER TABLE `Skills`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `Skills`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+INSERT INTO `Skills` (`skillnaam`,`percentages`) VALUES
+('HTML','70'),
+('CSS','40'),
+('C#','55'),
+('PHP','30'),
+('Python','25'),
+('MySQL','40');
+
+CREATE TABLE `Opleidingen` (
+  `ID` int(11) NOT NULL,
+  `images` varchar(70) NOT NULL,
+  `opleidingnaam` varchar(50) NOT NULL,
+  `plaatsnaam` varchar(90) NOT NULL,
+  `datumn` varchar(30) NOT NULL
+);
+
+ALTER TABLE `Opleidingen`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `Opleidingen`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+INSERT INTO `Opleidingen` (`images`,`opleidingnaam`,`plaatsnaam`,`datumn`) VALUES
+('images/NovaColledge.png','Software Developer','Nova College Haarlem','2020 Aug - heden'),
+('images/Azure.png','Azure Administrator','Microsoft','2019 Juli - 2019 Okt'),
+('images/Ms.net.jpg','MS.Net Programming','IMCEITS, in Myanmar','2011 - 2012'),
+('images/computer science2.jpg','Computer Science:Basis','Universiteit van Computer Studies UCSY, Yangon, Myanmar','2006 - 2009'),
+('images/computer science1.jpg','Computer Science:Gevorderd','Universiteit van Computer Studies UCSY, Yangon, Myanmar','2009 - 2010');
+
+CREATE TABLE `Contact` (
+  `ID` int(11) NOT NULL,
+  `naam` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `bedrijfsnaam` varchar(30) NOT NULL,
+  `plaats` varchar(30) NOT NULL,
+  `adres` varchar(40) NOT NULL,
+  `postcode` varchar(30) NOT NULL,
+  `telefoonnumber` int(30) NOT NULL,
+  `onderwerp` varchar(50) NOT NULL,
+  `beschrijving` varchar(90) NOT NULL
+);
+
+ALTER TABLE `Contact`
+  ADD PRIMARY KEY (`ID`);
+
+ALTER TABLE `Contact`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+

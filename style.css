@@ -326,11 +326,12 @@ section .title::after{
     background: lightgray;
     position: relative;
 }
-.skills .skills-content .right .line::before{
+.skills .skills-content .right .line::before{    
     content: "";
     position: absolute;
     height: 100%;
-    width: 80%;
+    width: var(--my--width--var);
+    /* width: 80%; */
     left: 0;
     top: 0;
     background: crimson;
@@ -473,6 +474,12 @@ section .title::after{
     margin-right: 10px;
 }
 .contact .right form .email{
+    margin-left: 10px;
+}
+.contact .right form .adres{
+    margin-right: 10px;
+}
+.contact .right form .postcode{
     margin-left: 10px;
 }
 .contact .right form .field input,
