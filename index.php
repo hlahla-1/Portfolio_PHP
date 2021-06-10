@@ -388,7 +388,9 @@
                     </form>
                 </div>
                 <?php
-                
+
+                        $naam="";
+                        
                 ?>
             </div>
         </div>
