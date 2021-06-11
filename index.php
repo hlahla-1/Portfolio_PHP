@@ -350,7 +350,7 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="index.php" method = "post">
+                    <form action="index.php #contact" method = "post">
                         <div class="fields">
                             <div class="field name">
                                 <input type="text" name= "naam" placeholder="Naam" required>
@@ -543,9 +543,13 @@
     
                             }
                             else{
-                                foreach ($invoerfouten as $invoerfout){
-                                    echo "<div style=color:red>".$invoerfout."</div>";
+                                echo "<p style=color:red>";
+                                foreach ($invoerfouten as $invoerfout){                                    
+                                    //echo "<div style=color:red>".$invoerfout."</div>"; 
+                                    echo $invoerfout;
+                                    echo "<br>";                                   
                                 }
+                                echo "</p>";
                             }
                         }
                         
