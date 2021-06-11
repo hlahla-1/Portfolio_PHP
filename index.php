@@ -350,40 +350,40 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form action="index.php" method = "post">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Naam" required>
+                                <input type="text" name= "naam" placeholder="Naam" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" name= "email" placeholder="Email" required>
                             </div>                            
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Bedrijfsnaam" required>
+                            <input type="text" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Vestigingsplaats" required>
+                            <input type="text" name= "plaats" placeholder="Vestigingsplaats" required>
                         </div>
                         <div class="fields">
                             <div class="field adres">
-                                <input type="text" placeholder="Adres" required>
+                                <input type="text" name="adres" placeholder="Adres" required>
                             </div>
                             <div class="field postcode">
-                                <input type="text" placeholder="Postcode" required>
+                                <input type="text" name="postcode" placeholder="Postcode" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Telefoonnummer" required>
+                            <input type="text" name="telefoonnummer" placeholder="Telefoonnummer" required>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Onderwerp" required>
+                            <input type="text" name="onderwerp" placeholder="Onderwerp" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Beschrijf project.." required></textarea>
+                            <textarea cols="30" rows="10" name="project" placeholder="Beschrijf project.." required></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit">Bericht versturen</button>
+                            <button type="submit" name="Berichtsturen">Bericht versturen</button>
                         </div>
                     </form>
                 </div>
@@ -398,6 +398,156 @@
                         $telefoonnummer = 0;
                         $onderwerp = "";
                         $beschrijfproject = "";
+                        $invoerfouten = array();
+
+                        $mysqli  = new mysqli("localhost","root","","portfolioproject");
+
+                        if(isset($_POST['Berichtsturen'])){
+                            $naam               = $mysqli -> real_escape_string($_POST['naam']);
+                            $email 			    = $mysqli -> real_escape_string($_POST['email']);
+                            $bedrijfsnaam       = $mysqli -> real_escape_string($_POST['bedrijfsnaam']);
+                            $telefoonnummer  	= $mysqli -> real_escape_string($_POST['telefoonnummer']);
+                            $adres 		    	= $mysqli -> real_escape_string($_POST['adres']);
+                            $postcode	    	= $mysqli -> real_escape_string($_POST['postcode']);
+                            $plaats     	    = $mysqli -> real_escape_string($_POST['plaats']);
+                            $onderwerp	    	= $mysqli -> real_escape_string($_POST['onderwerp']);
+                            $beschrijfproject	= $mysqli -> real_escape_string($_POST['project']);
+                            
+
+                            if (empty($naam)){
+                                array_push($invoerfouten,"Een naam is verplicht");
+                            }
+                            else{
+                                if(!ctype_alpha($naam)){
+                                    array_push($invoerfouten,"De naam mag alleen bestaan uit letters.");
+                                }
+                                else{
+
+                                    if(is_numeric($naam)){
+                                      array_push($invoerfouten,"De naam mag alleen bestaan uit letters.");
+                                    }
+
+                                }
+                            }
+
+
+                            if (empty($email)){
+                                array_push($invoerfouten,"Een email is verplicht");
+                            }
+                            else{
+
+                                $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+                                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                                  array_push($invoerfouten,"Deze email is geen geldig email-adres.");
+                                }              
+                            }
+
+
+                            if (empty($bedrijfsnaam)){
+                                array_push($invoerfouten,"Een bedrijf naam is verplicht");
+                            }
+                            else{
+                                if(!ctype_alpha($bedrijfsnaam)){
+                                    array_push($invoerfouten,"De bedrijf naam mag alleen bestaan uit letters.");
+                                }
+                                else{
+
+                                    if(is_numeric($bedrijfsnaam)){
+                                      array_push($invoerfouten,"De bedrijf naam mag alleen bestaan uit letters.");
+                                    }
+
+                                }
+                            }
+
+                            if (empty($telefoonnummer)){
+                                array_push($invoerfouten,"Een telefoonnummer is verplicht");
+                            }
+                            else{
+
+                                if(ctype_alpha($telefoonnummer)){
+                                  array_push($invoerfouten,"Een telefoon mag alleen bestaan uit numeriek.");
+                                }
+
+                                else{
+                  
+                                  if(is_numeric($telefoonnummer)==false){
+                                    array_push($invoerfouten,"Een telefoon mag alleen bestaan uit numeriek.");
+                                  }
+
+                                }
+                            }
+
+                            if (empty($adres)){
+                                array_push($invoerfouten,"Een adres is verplicht");
+                            }
+                            else{
+
+                                if(is_string($adres)==false){
+                                  array_push($invoerfouten,"Een adres mag alleen bestaan uit letters.");
+                                }
+                                /*else{
+                                  if(!ctype_alpha($adres)){
+                                    array_push($invoerfouten,"Een adres mag alleen bestaan uit letters.");
+                                  }
+                                }*/
+                            }
+
+                            if (empty($postcode)){
+                                array_push($invoerfouten,"Een postcode is verplicht");
+                            }
+                            else{
+                                $masker="/^[1-9][0-9][0-9][0-9][A-Z][A-Z]$/";
+                                if(!preg_match($masker,$postcode)){
+                                array_push($invoerfouten,"Een postcode is geen geldig.");
+                                }
+                            }
+
+                            if (empty($plaats)){
+                                array_push($invoerfouten,"Een plaats is verplicht");
+                            }
+                            else{
+
+                                if(is_string($plaats)==false){
+                                  array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
+                                }
+                                else{
+                  
+                                  if(!ctype_alpha($plaats)){
+                                    array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
+                                  }
+                                }
+                              }
+
+                            if (empty($onderwerp)){
+                                array_push($invoerfouten,"Een onderwerp is verplicht");
+                            }
+                            if (empty($beschrijfproject)){
+                                array_push($invoerfouten,"Een beschrijf project is verplicht");
+                            }
+
+                            if (count($invoerfouten)== 0){
+
+                                $sql = "INSERT INTO contact (naam,email,bedrijfsnaam,plaats,telefoonnumber,adres,postcode,onderwerp,beschrijving)
+                                                    VALUES('$naam','$email', '$bedrijfsnaam','$plaats','$telefoonnummer','$adres','$postcode','$onderwerp','$beschrijfproject')";
+
+                                // if (!$mysqli -> query($sql)){ 
+                                // 	var_dump($sql);
+                                // 	echo "Foutboodschap";
+                                // }
+
+                                //echo $sql;
+                                mysqli_query($mysqli, $sql);
+                                
+                                
+                                // header("Location:index.php");
+    
+                            }
+                            else{
+                                foreach ($invoerfouten as $invoerfout){
+                                    echo "<div style=color:red>".$invoerfout."</div>";
+                                }
+                            }
+                        }
                         
                 ?>
             </div>
