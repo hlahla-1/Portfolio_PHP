@@ -145,11 +145,9 @@
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">Mijn creatieve vaardigheden en ervaringen</div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima doloremque, molestias numquam
-                        sequi laudantium modi quam aspernatur hic minus. Voluptatum officiis repellendus, voluptatem
-                        molestias cumque nulla vel similique exercitationem velit omnis. Ea temporibus ipsam
-                        necessitatibus dolorum, qui maiores at, deserunt, sequi debitis id molestiae quos accusamus
-                        voluptatibus doloremque ad corporis. </p>
+                    <p>Het afgelopen jaren heb ik leren werken met verschillende programmeertalen. 
+                        Ik heb geleerd hoe ik een website kan bouwen met HTML en CSS, ik heb spelletjes leren programmeren met C#.
+                         Nu ben ik bezig met PHP en SQL , zodat ik een website professioneel kan maken. </p>
                         <a href="#">Lees verder</a>
                 </div>
                 <div class="column right">
