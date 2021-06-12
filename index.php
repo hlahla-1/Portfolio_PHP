@@ -145,9 +145,8 @@
             <div class="skills-content">
                 <div class="column left">
                     <div class="text">Mijn creatieve vaardigheden en ervaringen</div>
-                    <p>Het afgelopen jaren heb ik leren werken met verschillende programmeertalen. 
-                        Ik heb geleerd hoe ik een website kan bouwen met HTML en CSS, ik heb spelletjes leren programmeren met C#.
-                         Nu ben ik bezig met PHP en SQL , zodat ik een website professioneel kan maken. </p>
+                     <p>Het afgelopen jaren heb ik leren werken met verschillende programmeertalen. Ik heb geleerd hoe ik een website kan bouwen met HTML en CSS, ik heb spelletjes leren programmeren met C#.
+                         Nu ben ik bezig met PHP en SQL, zodat ik een website professioneel kan maken. </p>
                         <a href="#">Lees verder</a>
                 </div>
                 <div class="column right">
@@ -319,9 +318,7 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Neem contact op</div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima doloremque, molestias numquam
-                        sequi laudantium modi quam aspernatur hic minus. Voluptatum officiis repellendus, voluptatem
-                        molestias cumque nulla vel?</p>
+                    <p>U kunt me op meerdere manieren contacteren. U kunt me via de site mij contacteren of mij handmatig een e-email sturen en kan ik u helpen.</p>
                         <div class="icons">
                             <div class="row">
                                 <i class="fas fa-user"></i>
