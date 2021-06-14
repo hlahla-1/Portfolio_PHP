@@ -114,11 +114,11 @@ CREATE TABLE `skills` (
 
 INSERT INTO `skills` (`ID`, `skillnaam`, `percentages`) VALUES
 (1, 'HTML', 70),
-(2, 'CSS', 40),
-(3, 'C#', 55),
-(4, 'PHP', 30),
-(5, 'Python', 25),
-(6, 'MySQL', 40);
+(2, 'CSS', 50),
+(3, 'C#', 60),
+(4, 'PHP', 60),
+(5, 'Python', 40),
+(6, 'MySQL', 60);
 
 --
 -- Indexes for dumped tables
