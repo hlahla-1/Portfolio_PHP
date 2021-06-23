@@ -495,7 +495,7 @@
                                 array_push($invoerfouten,"Een postcode is verplicht");
                             }
                             else{
-                                $masker="/^[1-9][0-9][0-9][0-9][a-zA-Z][A-Z]$/"; // "/^[0-9]{4} ?[A-z]{2}$/", "^[1-9][0-9]{3}\s?([a-zA-Z]{2})?$"
+                                $masker="/^[1-9][0-9][0-9][0-9][a-zA-Z][a-zA-Z]$/"; // "/^[0-9]{4} ?[A-z]{2}$/", "^[1-9][0-9]{3}\s?([a-zA-Z]{2})?$"
                                 if(!preg_match($masker,$postcode)){
                                 array_push($invoerfouten,"Een postcode is geen geldig.");
                                 }
