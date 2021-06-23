@@ -458,16 +458,20 @@
                                 array_push($invoerfouten,"Een telefoonnummer is verplicht");
                             }
                             else{
-
+                                
                                 if(ctype_alpha($telefoonnummer)){
                                   array_push($invoerfouten,"Een telefoon mag alleen bestaan uit numeriek.");
                                 }
 
                                 else{
+
+                                    if(preg_match('/^\(?([+]31|0031|0)-?6(\s?|-)([0-9]\s{0,3}){8}$/', $telefoonnummer) == 0){
+                                        array_push($invoerfouten,"Een telefoon is geen goed number.");
+                                    }
                   
-                                  if(is_numeric($telefoonnummer)==false){
-                                    array_push($invoerfouten,"Een telefoon mag alleen bestaan uit numeriek.");
-                                  }
+                                //   if(is_numeric($telefoonnummer)==false){
+                                //     array_push($invoerfouten,"Een telefoon mag alleen bestaan uit numeriek.");
+                                //   }
 
                                 }
                             }
@@ -478,7 +482,7 @@
                             else{
 
                                 if(is_string($adres)==false){
-                                  array_push($invoerfouten,"Een adres mag alleen bestaan uit letters.");
+                                  array_push($invoerfouten,"Een adres mag alleen bestaan uit string.");
                                 }
                                 /*else{
                                   if(!ctype_alpha($adres)){
@@ -491,7 +495,7 @@
                                 array_push($invoerfouten,"Een postcode is verplicht");
                             }
                             else{
-                                $masker="/^[1-9][0-9][0-9][0-9][A-Z][A-Z]$/";
+                                $masker="/^[1-9][0-9][0-9][0-9][a-zA-Z][a-zA-Z]$/"; // "/^[0-9]{4} ?[A-z]{2}$/", "^[1-9][0-9]{3}\s?([a-zA-Z]{2})?$"
                                 if(!preg_match($masker,$postcode)){
                                 array_push($invoerfouten,"Een postcode is geen geldig.");
                                 }
@@ -501,17 +505,25 @@
                                 array_push($invoerfouten,"Een plaats is verplicht");
                             }
                             else{
-
-                                if(is_string($plaats)==false){
-                                  array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
-                                }
+                                if(preg_match("/[A-Za-z]{3,30}$/", $plaats) == 0){ 
+                                    array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
+                                  } // "/^([a-zA-Z' ]+)$/" , '/[A-Za-z]{3,30}$/'
+                                
                                 else{
                   
                                   if(!ctype_alpha($plaats)){
                                     array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
                                   }
+
+                                  else{
+                                  
+                                        if(is_string($plaats)==false){
+                                            array_push($invoerfouten,"Een woonplaats mag alleen bestaan uit letters.");
+                                        }
+                                    }
+
                                 }
-                              }
+                            }
 
                             if (empty($onderwerp)){
                                 array_push($invoerfouten,"Een onderwerp is verplicht");
